@@ -441,7 +441,7 @@ void PushBuffer(HWND wndFocused)
 				LayoutChangeForced = 1;
 			}
 
-			int count = WideCharToMultiByte(1258, 0, VnKbd.uniPush, VnKbd.keysPushed, 
+			int count = WideCharToMultiByte(1258, 0, (LPCWCH)VnKbd.uniPush, VnKbd.keysPushed, 
 				                           (char *)VnKbd.ansiPush, VnKbd.keysPushed, 0, 0);
 			for (int i=0; i<count; i++) {
 				scanCode = VkKeyScan(VnKbd.ansiPush[i]);

@@ -1032,7 +1032,7 @@ int VietKey::checkMacro(unsigned char lastChar)
 				uniPush[keysPushed] = p[keysPushed];
 				//ansiPush[keysPushed] = '?';
 			}
-			WideCharToMultiByte(CP_US_ANSI, 0, p, -1, (char *)ansiPush, sizeof(ansiPush), NULL, NULL);
+			WideCharToMultiByte(CP_US_ANSI, 0, (LPCWCH)p, -1, (char *)ansiPush, sizeof(ansiPush), NULL, NULL);
 			uniPush[keysPushed] = lastChar;
 			ansiPush[keysPushed] = lastChar;
 			keysPushed++;
