@@ -161,8 +161,7 @@ UnicodeCompCharset::UnicodeCompCharset(UnicodeChar *uniChars, DWORD *uniCompChar
 		m_totalChars++;
 	}
 
-	int k;
-	for (k=0, i=TOTAL_VNCHARS; k<TOTAL_VNCHARS; k++)
+	for (int k=0, i=TOTAL_VNCHARS; k<TOTAL_VNCHARS; k++)
 		if (uniChars[k] != uniCompChars[k]) {
 			m_info[i].compChar = uniChars[k];
 			m_info[i].stdIndex = k;
@@ -1103,8 +1102,7 @@ WinCP1258Charset::WinCP1258Charset(WORD *compositeChars, WORD *precomposedChars)
 	m_totalChars = TOTAL_VNCHARS;
 
 	//add precomposed chars to the table
-	int k;
-	for (k=0, i=TOTAL_VNCHARS; k<TOTAL_VNCHARS; k++)
+	for (int k=0, i=TOTAL_VNCHARS; k<TOTAL_VNCHARS; k++)
 		if (precomposedChars[k] != compositeChars[k]) {
 			if (precomposedChars[k] >> 8) // a 2-byte character
 				m_stdMap[precomposedChars[k] >> 8] = 0xFFFF; //INVALID_STD_CHAR;

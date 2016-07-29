@@ -104,7 +104,7 @@ public:
 				WPARAM wParam,  // first message parameter
 				LPARAM lParam   // second message parameter
 				);
-	static setLinkCursor(HCURSOR hCursor)
+	static void setLinkCursor(HCURSOR hCursor)
 	{
 		m_shLinkCursor = hCursor;
 	}

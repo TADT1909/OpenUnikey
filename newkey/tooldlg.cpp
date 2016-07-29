@@ -666,7 +666,7 @@ int getRTFText()
 //--------------------------------------
 int ConvertClipboard(int inCharset, int outCharset, int & convErrCode, int promptInfo, HWND hOwnerWnd)
 {
-	static lastFormat = CF_TEXT; // format of last converted clipboard (CF_TEXT or CF_UNICODETEXT)
+	static int lastFormat = CF_TEXT; // format of last converted clipboard (CF_TEXT or CF_UNICODETEXT)
 
 	HANDLE hInData = NULL;
 	HANDLE hOutData = NULL;

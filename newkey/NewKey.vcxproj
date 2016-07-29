@@ -212,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="about.h" />
+    <ClInclude Include="afxres.h" />
     <ClInclude Include="button.h" />
     <ClInclude Include="encode.h" />
     <ClInclude Include="ExpDlg.h" />
