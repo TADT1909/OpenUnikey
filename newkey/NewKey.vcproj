@@ -21,7 +21,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../keyhook,../vnconv,../rtfio"
+				AdditionalIncludeDirectories="../keyhook,../vnconv"
 				PreprocessorDefinitions="WIN32,NDEBUG,_WINDOWS,UNICODE"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -87,7 +87,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../keyhook,../vnconv,../rtfio"
+				AdditionalIncludeDirectories="../keyhook,../vnconv"
 				PreprocessorDefinitions="WIN32,_DEBUG,_WINDOWS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -151,7 +151,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../keyhook,../vnconv,../rtfio"
+				AdditionalIncludeDirectories="../keyhook,../vnconv"
 				PreprocessorDefinitions="WIN32,NDEBUG,_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -434,9 +434,6 @@
 		</Filter>
 		<File
 			RelativePath=".\gpl.txt">
-		</File>
-		<File
-			RelativePath="..\rtfio\rtfio.lib">
 		</File>
 	</Files>
 	<Globals>

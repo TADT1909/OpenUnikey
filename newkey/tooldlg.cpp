@@ -27,7 +27,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "vnconv.h"
 #include "button.h"
 #include "util.h"
-#include "intrtfio.h"
+//#include "intrtfio.h"
 
 extern CUserPref UserPref;
 
@@ -386,96 +386,11 @@ void CToolkitDlg::onConvert()
 {
 	storeDlgInfo();
 
-	// Get charsets
-	int inCharset = SendMessage(m_inCharsetCtrl, CB_GETCURSEL, 0, 0);
-	int outCharset = SendMessage(m_outCharsetCtrl, CB_GETCURSEL, 0, 0);
-
-	if (inCharset == CB_ERR || outCharset == CB_ERR) {
-		MessageBox(m_hWnd, 
-			       _TEXT("You must specify input and output charsets"), 
-				   _TEXT("Invalid operation"), 
-				   MB_ICONEXCLAMATION);
-		return;
-	}
-
-	inCharset = InConvCharsetList[inCharset].id;
-	outCharset = OutConvCharsetList[outCharset].id;
-
-	// Check if clipboard is selected
-	int useClipboard = (SendDlgItemMessage(m_hWnd, IDC_CLIPBOARD, BM_GETCHECK, 0, 0) == BST_CHECKED)? 1 : 0;
-
-	if (useClipboard) {
-		int errCode;
-		ConvertClipboard(inCharset, outCharset, errCode, 1, m_hWnd);
-		return;
-	}
-
-	// File convert
-	TCHAR inFile[MAX_PATH], outFile[MAX_PATH];
-	SendMessage(m_inFileCtrl, WM_GETTEXT, sizeof(inFile)/sizeof(TCHAR), (LPARAM)inFile);
-	if (inFile[0] == NULL) {
-		MessageBox(m_hWnd, 
-			       _TEXT("You must provide an input file"), 
-			       _TEXT("Invalid operation"), 
-				   MB_ICONEXCLAMATION);
-		SetFocus(m_inFileCtrl);
-		return;
-	}
-	SendMessage(m_outFileCtrl, WM_GETTEXT, sizeof(outFile)/sizeof(TCHAR), (LPARAM)outFile);
-	if (outFile[0] == NULL) {
-		MessageBox(m_hWnd, 
-			       _TEXT("You must provide an output file"), 
-				   _TEXT("Invalid operation"), 
-				   MB_ICONEXCLAMATION);
-		SetFocus(m_outFileCtrl);
-		return;
-	}
-
-	//set conversion options
-	VnConvOptions opt, oldOpt;
-	VnConvGetOptions(&oldOpt);
-	VnConvResetOptions(&opt);
-	opt.toLower = m_pPref->m_toLower;
-	opt.toUpper = m_pPref->m_toUpper;
-	opt.removeTone = m_pPref->m_removeTone;
-	VnConvSetOptions(&opt);
-
-	TCHAR ext[_MAX_EXT];
-	_tsplitpath(inFile, NULL, NULL, NULL, ext);
-
-	int ret;
-#ifndef _UNICODE
-	if (_tcsicmp(ext, _T(".RTF")) == 0)
-		ret = RtfFileConvert(inCharset, outCharset, inFile, outFile, m_pPref->m_minimalFontset);
-	else 
-		ret = VnFileConvert(inCharset, outCharset, inFile, outFile);
-#else
-	char inFileAnsi[MAX_PATH], outFileAnsi[MAX_PATH];
-	WideCharToMultiByte(CP_US_ANSI, 0, inFile, -1, inFileAnsi, MAX_PATH, NULL, NULL);
-	WideCharToMultiByte(CP_US_ANSI, 0, outFile, -1, outFileAnsi, MAX_PATH, NULL, NULL);
-	if (_tcsicmp(ext, _T(".RTF")) == 0)
-		ret = RtfFileConvert(inCharset, outCharset, inFileAnsi, outFileAnsi, m_pPref->m_minimalFontset);
-	else
-		ret = VnFileConvert(inCharset, outCharset, inFileAnsi, outFileAnsi);
-#endif
-	VnConvSetOptions(&oldOpt);
-
-	if (ret == 0) {
-		MessageBox(m_hWnd, 
-		           _TEXT("Successfully converted"), 
-				   _TEXT("Result"), 
-				   MB_ICONINFORMATION);
-//		SendMessage(m_outFileCtrl, WM_SETTEXT, 0, (LPARAM)"");
-	}
-	else {
-		TCHAR msg[200];
-#ifndef _UNICODE
-		_stprintf(msg, _TEXT("Error[%d]: %s"), ret, VnConvErrMsg(ret));
-#else
-		_stprintf(msg, _TEXT("Error[%d]"), ret);
-#endif
-		MessageBox(m_hWnd, msg, _TEXT("Result"), MB_ICONEXCLAMATION);
-	}
+	MessageBox(m_hWnd, 
+				_TEXT("This part was removed because it illegal to GPLv2"), 
+				_TEXT("Invalid Operation"), 
+				MB_ICONEXCLAMATION);
+	return;
 }
 
 
@@ -533,113 +448,7 @@ struct ConvSignature
 //--------------------------------------------------------------
 int convertRTF(int inCharset, int outCharset, int & errCode, int promptInfo, HWND hOwnerWnd)
 {
-	HANDLE hTmp;
-	HANDLE hRtfIn = NULL;
-	BYTE * pRtfIn = NULL;
-
-	HANDLE hRtfOut = NULL;
-	BYTE * pRtfOut = NULL;
-
-	int inSize, outSize, inConvLen, outConvLen;
-	int ret = 0;
-
-	errCode = 0;
-
-	UINT cfRtf = RegisterClipboardFormat(_T("Rich Text Format"));
-
-
-	if (cfRtf==0 || !IsClipboardFormatAvailable(cfRtf))
-		return 0;
-
-	hRtfIn = GetClipboardData(cfRtf);
-	inSize = GlobalSize(hRtfIn);
-
-	pRtfIn = (BYTE *)GlobalLock(hRtfIn);
-	if (pRtfIn == NULL)	goto end;
-
-//	outSize = DEFAULT_RTF_BUF_SIZE;
-	outSize = 2*inSize; // just guess that we may need at most 2*inSize
-
-	hRtfOut = GlobalAlloc(GMEM_MOVEABLE, outSize);
-	if (hRtfOut == NULL) {
-		if (promptInfo)
-			MessageBox(hOwnerWnd, _T("Not enough memory"), _T("Error"), MB_ICONERROR);
-		goto end;
-	}
-
-	pRtfOut = (BYTE *)GlobalLock(hRtfOut);
-	if (pRtfOut == NULL) goto end;
-
-	inConvLen = inSize;
-	outConvLen = outSize;
-	errCode = RtfMemConvert(inCharset, outCharset, pRtfIn, pRtfOut, 
-		                    inConvLen, outConvLen,
-							UserPref.m_minimalFontset);
-
-	if (errCode == VNCONV_ERR_WRITING) {
-		//not enough memory. Allocate more
-		outSize = outConvLen;
-		GlobalUnlock(hRtfOut);
-		pRtfOut = NULL;
-		hTmp = GlobalReAlloc(hRtfOut, outSize, GMEM_MOVEABLE);
-		if (hTmp == NULL) {
-			if (promptInfo)
-				MessageBox(hOwnerWnd, _T("Not enough memory"), _T("Error"), MB_ICONERROR);
-			goto end;
-		}
-		hRtfOut = hTmp;
-
-		pRtfOut = (BYTE *)GlobalLock(hRtfOut);
-		if (pRtfOut == NULL)
-			goto end;
-
-		inConvLen = inSize;
-		errCode = RtfMemConvert(inCharset, outCharset, pRtfIn, pRtfOut, 
-			                    inConvLen, outConvLen,
-								UserPref.m_minimalFontset);
-	}
-
-	if (errCode != 0) {
-		if (promptInfo)
-			MessageBox(hOwnerWnd, 
-			           _T("Could not convert RTF clipboard. Possibly not enough memory"), 
-			           _T("Information"), MB_ICONERROR);
-		goto end;
-	}
-
-	GlobalUnlock(hRtfIn);
-	GlobalUnlock(hRtfOut);
-	pRtfIn = NULL;
-	pRtfOut = NULL;
-
-	if (outSize > outConvLen) {
-		//reallocate
-		outSize = outConvLen;
-		hTmp = GlobalReAlloc(hRtfOut, outSize, GMEM_MOVEABLE);
-		if (hTmp == NULL) goto end;
-		hRtfOut = hTmp;
-	}
-
-	//Set clipboard
-	EmptyClipboard();
-	SetClipboardData(cfRtf, hRtfOut);
-	SetClipboardData(CF_TEXT, NULL); //delay rendering ansi text
-	SetClipboardData(CF_UNICODETEXT, NULL); //delay rendering unicode text
-	hRtfClipboard = hRtfOut; // for later conversion from RTF to text as needed
-
-	hRtfOut = NULL;
-	if (promptInfo)
-		MessageBox(hOwnerWnd, _T("Successfully converted RTF clipboard"), _T("Result"), MB_ICONINFORMATION);
-	ret = 1;
-
-end:
-	if (pRtfIn)
-		GlobalUnlock(hRtfIn);
-	if (pRtfOut)
-		GlobalUnlock(hRtfOut);
-	if (hRtfOut)
-		GlobalFree(hRtfOut);
-	return ret;
+	return 0;
 }
 
 int getRTFText()
@@ -931,61 +740,7 @@ int guessOutSize(int inCharset, int outCharset, int inSize)
 //---------------------------------
 int renderText(int unicode)
 {
-	HANDLE hRtfIn = NULL;
-	BYTE * pRtfIn = NULL;
-	HANDLE hOut = NULL;
-	BYTE * pOut = NULL;
-
-	int inSize, outSize, inMemLen, outMemLen;
-	int ret = 0;
-
-	int errCode = 0;
-	if (hRtfClipboard == NULL)
-		return 0;
-	hRtfIn = hRtfClipboard;
-	inSize = GlobalSize(hRtfIn);
-
-	pRtfIn = (BYTE *)GlobalLock(hRtfIn);
-	if (pRtfIn == NULL)	goto end;
-
-	inMemLen = inSize;
-	outMemLen = 0;
-	errCode = RtfMemExtractText(pRtfIn, NULL, inMemLen, outMemLen, unicode);
-
-	if (errCode == VNCONV_ERR_WRITING) {
-		//not enough memory. Allocate more
-		outSize = outMemLen;
-		hOut = GlobalAlloc(GMEM_MOVEABLE, outSize);
-		if (hOut == NULL) goto end;
-		pOut = (BYTE *)GlobalLock(hOut);
-		if (pOut == NULL) goto end;
-
-		inMemLen = inSize;
-		errCode = RtfMemExtractText(pRtfIn, pOut, inMemLen, outMemLen, unicode);
-	}
-	if (errCode != 0) 
-		goto end;
-
-	//put to text clipboard
-	GlobalUnlock(hRtfIn);
-	GlobalUnlock(hOut);
-	pRtfIn = NULL;
-	pOut = NULL;
-
-	//Set clipboard
-	SetClipboardData(unicode ? CF_UNICODETEXT : CF_TEXT, hOut);
-	hOut = NULL;
-	ret = 1;
-
-end:
-	if (pRtfIn)
-		GlobalUnlock(hRtfIn);
-	if (pOut)
-		GlobalUnlock(hOut);
-	if (hOut)
-		GlobalFree(hOut);
-
-	return ret;
+	return  0;
 }
 
 //---------------------------------

@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "font.h"
 #include "tooldlg.h"
 #include "vnconv.h"
-#include "intrtfio.h"
+//#include "intrtfio.h"
 
 #define WM_MYICON_NOTIFY	(WM_USER+1)
 
@@ -303,7 +303,6 @@ int WINAPI WinMain(
 		return -1;
 	}
 #endif
-	InitRtfIO();
 
 	MSG msg;
 	//-- Check if a previous instance is loaded

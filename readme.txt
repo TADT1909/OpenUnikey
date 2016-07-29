@@ -1,3 +1,5 @@
+Hello my name is Dung Tran, I'm going to remove illegal part from this software.
+-------------------------------------------------------
 The UniKey project consists of following components:
 - UniKey: Vietnamese keyboard program for Windows
 - UVConverter: Universal Vietnamese Encoding Converter

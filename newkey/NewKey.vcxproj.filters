@@ -222,7 +222,4 @@
   <ItemGroup>
     <Text Include="gpl.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\rtfio\rtfio.lib" />
-  </ItemGroup>
 </Project>
