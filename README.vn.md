@@ -1,14 +1,14 @@
 # OpenUnikey
 
-OpenUnikey is a open source project under GPLv2 license.
+OpenUnikey là một phần mềm nguồn mở phân phới dưới giấy phép GPLv2 license.
 
 # History
 
-Unikey is a input method for Vietnamese which was developed by [Pham Kim Long](mailto:unikey@gmail.com). This software was distributed under GPLv2 but it have contain binary library (rtfio.dll) without source code, that is a illegal to GPLv2.
+Unikey là một chương trình hỗ trợ phương thức nhập Tiếng Việt viết bởi [Pham Kim Long](mailto:unikey@gmail.com). Phần mềm này được phân phối với giấy phép GPLv2, nhưng nó chứa một thư viện nhị phân (rtfio.dll) không kèm theo mã nguồn, điều này vi phạm nghiêm trọng GPLv2.
 
-After version 3.62 it was become a close source software. 
+Từ sau phiên bản 3.62 Unikey không còn là mã nguồn mở. 
 
-So, i decide to build a free and truly open source for community.
+Chính lẽ đó tôi quyết định phát triển một phiên bản miển phí và mã nguồn mở thực sự cho cộng đồng.
 
 # License
 
