@@ -16,7 +16,7 @@ OpenUnikey - Open Source Unicode For Vietnamese
 
 Copyright (C) 1998-2005 [Pham Kim Long](unikey@gmail.com)
 
-Copyright (C) 2016 [Trần Anh Dũng](tad88.dev@gmail.com)
+Copyright (C) 2016 [OpenUnikey](https://github.com/OpenUnikey)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
