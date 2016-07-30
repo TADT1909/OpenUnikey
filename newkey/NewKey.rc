@@ -83,7 +83,7 @@ IDD_KEY_DIALOG DIALOGEX 0, 0, 250, 193
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "UniKey 3.62"
+CAPTION "OpenUnikey 0.0.2a"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     COMBOBOX        IDC_CODE_TABLE,66,14,112,64,CBS_DROPDOWNLIST | 
@@ -117,7 +117,7 @@ BEGIN
                     WS_TABSTOP,156,119,71,15
     CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,13,148,113,10
-    CONTROL         "Auto-run UniKey at boot time",IDC_AUTO_START,"Button",
+    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,138,148,105,10
     CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | 
                     WS_TABSTOP,10,168,55,17
@@ -143,24 +143,24 @@ IDD_ABOUT DIALOGEX 0, 0, 244, 137
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
     WS_SYSMENU
-CAPTION "About UniKey 3.62 [Build 050711]"
+CAPTION "About OpenUnikey 0.0.2a [Build 000005]"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,97,114,46,
                     16
-    LTEXT           "http://unikey.org",IDC_WEB_LINK,76,29,54,8
+    LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,76,29,54,8
     GROUPBOX        "",IDC_STATIC,7,7,230,49
-    LTEXT           "Author: Pham Kim Long, CTU Prague",IDC_AUTHOR,39,16,163,
+    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,
                     8
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           " UniKey is a free open-source software, you can redistribute and/or\n modify it under the terms of the GNU General Public License.\n UniKey supports all Win32 platforms: Windows 9x, ME, NT/2000/XP.",
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",
                     IDC_INFO,7,64,230,28,SS_NOPREFIX | SS_SUNKEN
-    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long",IDC_COPYRIGHT,
+    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,
                     39,41,158,8
     LTEXT           "Web site:",IDC_STATIC,39,29,31,8
-    LTEXT           "Support forum:",IDC_SUPPORT_PROVIDER,7,100,67,8,NOT 
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,100,67,8,NOT 
                     WS_VISIBLE
-    LTEXT           "http://unikey.org/forum",IDC_SUPPORT_LINK,81,100,80,9,
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,81,100,80,9,
                     NOT WS_VISIBLE
 END
 #endif
@@ -174,7 +174,7 @@ IDD_TOOLKIT DIALOGEX 0, 0, 319, 212
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_CAPTION
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "UniKey Toolkit"
+CAPTION "OpenUnikey Toolkit"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     COMBOBOX        IDC_IN_CHARSET,61,16,126,157,CBS_DROPDOWNLIST | 
@@ -266,7 +266,7 @@ IDD_KEY_DIALOG DIALOGEX 0, 0, 257, 188
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "UniKey 3.62"
+CAPTION "OpenUnikey 0.0.2a"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
     COMBOBOX        IDC_CODE_TABLE,69,15,119,64,CBS_DROPDOWNLIST | 
@@ -299,7 +299,7 @@ BEGIN
                     WS_TABSTOP,156,119,71,15
     CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,13,146,121,10
-    CONTROL         "Auto-run UniKey at boot time",IDC_AUTO_START,"Button",
+    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,142,146,109,10
     CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | 
                     WS_TABSTOP,10,163,60,17
@@ -326,7 +326,7 @@ IDD_TOOLKIT DIALOGEX 0, 0, 305, 195
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_CAPTION
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "UniKey Toolkit"
+CAPTION "OpenUnikey Toolkit"
 FONT 8, "Arial", 0, 0, 0x1
 BEGIN
     COMBOBOX        IDC_IN_CHARSET,55,17,117,150,CBS_DROPDOWNLIST | 
@@ -377,24 +377,24 @@ IDD_ABOUT DIALOGEX 0, 0, 238, 132
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
     WS_SYSMENU
-CAPTION "About UniKey 3.62 [Build 050711 NT]"
+CAPTION "About OpenUnikey 0.0.2a [Build 000005 NT]"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
     CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,95,108,46,
                     16
-    LTEXT           "http://unikey.org",IDC_WEB_LINK,83,27,52,8
+    LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,83,27,52,8
     GROUPBOX        "",IDC_STATIC,7,7,224,47
-    LTEXT           "Author: Pham Kim Long, CTU Prague",IDC_AUTHOR,39,16,163,
+    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,
                     8
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           " UniKey is a free open-source software, you can redistribute and/or\n modify it under the terms of the GNU General Public License.\n UniKey supports all Win32 platforms: Windows 9x, ME, NT/2000/XP.",
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",
                     IDC_INFO,7,61,224,28,SS_NOPREFIX | SS_SUNKEN
-    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long",IDC_COPYRIGHT,
+    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,
                     39,38,158,8
     LTEXT           " Web site:",IDC_STATIC,39,27,33,8
-    LTEXT           "Support forum:",IDC_SUPPORT_PROVIDER,7,93,73,8,NOT 
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,93,73,8,NOT 
                     WS_VISIBLE
-    LTEXT           "http://unikey.org/forum",IDC_SUPPORT_LINK,82,93,73,8,
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,82,93,73,8,
                     NOT WS_VISIBLE
 END
 #endif
@@ -551,8 +551,8 @@ IDC_HAND_CURSOR         CURSOR                  "res\\H_POINT.CUR"
 
 STRINGTABLE 
 BEGIN
-    IDS_APP_TITLE           "UniKey 3.62"
-    IDS_ABOUT               "&About UniKey..."
+    IDS_APP_TITLE           "OpenUnikey 0.0.2a"
+    IDS_ABOUT               "&About OpenUnikey..."
 END
 
 #endif    // English (U.S.) resources

@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 UniKey - Vietnamese Keyboard for Windows
-Copyright (C) 1998-2002 Pham Kim Long
-Contact: unikey@gmail.com
+Copyright (C) 1998-2002 Pham Kim Long <unikey@gmail.com>
+Copyright (C) 2016 OpenUnikey <http://openunikey.github.io>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -25,21 +25,20 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "userpref.h"
 #include "vnconv.h"
 
-#define UNIKEY_HOME_PAGE _TEXT("http://unikey.org")
-#define AUTHOR_EMAIL _TEXT("mailto:unikey@gmail.com")
-#define SUPPORT_HOME_PAGE _TEXT("http://unikey.org/forum")
+#define UNIKEY_HOME_PAGE _TEXT("http://openunikey.github.io")
+#define AUTHOR_EMAIL _TEXT("mailto:tad88.dev@gmail.com")
+#define SUPPORT_HOME_PAGE _TEXT("https://github.com/OpenUnikey/OpenUnikey/issues")
 
 extern HINSTANCE AppInstance;
 extern CUserPref UserPref; // user preference
 
 AnsiDlgItemInfo VnAboutDlgItems[] = {
-	{IDC_AUTHOR,				"T¸c gi¶: Ph¹m Kim Long, §¹i häc Kü thuËt Praha"},
-	{IDC_SUPPORT_PROVIDER,		"DiÔn ®µn trî gióp:"},
-	{IDC_SUPPORT_LINK,		"http://unikey.org/forum"},
-	{IDC_COPYRIGHT,		"Copyright (C) 1998 - 2005 Ph¹m Kim Long"},
-	{IDC_INFO,			" UniKey lµ ch­¬ng tr×nh m· nguån më. B¹n cã thÓ ph©n phèi,\n"
-						" söa ®æi UniKey tu©n theo The GNU General Public License.\n"
-						" UniKey hç trî c¸c hÖ ®iÒu hµnh: Windows 9x/ME/NT/2000/XP."}};
+	{IDC_AUTHOR,				"Author: OpenUnikey Team"},
+	{IDC_SUPPORT_PROVIDER,		"Support:"},
+	{IDC_SUPPORT_LINK,		"https://github.com/OpenUnikey/OpenUnikey/issues"},
+	{IDC_COPYRIGHT,		" Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey"},
+	{IDC_INFO,			" OpenUnikey is free and open source\n"
+						" Distributed under The GNU General Public License.\n"}};
 
 #define MAX_ITEM_LEN 256
 
