@@ -1,10 +1,12 @@
 # OpenUnikey
 
-This is a open source project under GPLv2 license.
+OpenUnikey is a open source project under GPLv2 license.
 
 # History
 
 Unikey is a input method for Vietnamese which was developed by [Pham Kim Long](mailto:unikey@gmail.com). This software was distributed under GPLv2 but it have contain binary library (rtfio.dll) without source code, that is a illegal to GPLv2.
+
+After 3.62 it was become a close source software. 
 
 So, i decide to build a free and truly open source for community.
 
