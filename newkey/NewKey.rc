@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -29,19 +27,33 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\Pen.ico"
+
 IDI_OPEN_FOLDER         ICON                    "res\\Openfold.ico"
+
 IDI_CONVERT             ICON                    "res\\convert.ico"
+
 IDI_INFO                ICON                    "res\\info.ico"
+
 IDI_CANCEL              ICON                    "res\\cancel.ico"
+
 IDI_EN                  ICON                    "res\\viet-off.ico"
+
 IDI_VIET                ICON                    "res\\viet-on.ico"
+
 IDI_OK                  ICON                    "res\\OK.ico"
+
 IDI_HELP                ICON                    "res\\help.ico"
+
 IDI_RESET               ICON                    "res\\2arrow.ico"
+
 IDI_CONTRACT            ICON                    "res\\ARW06UP.ICO"
+
 IDI_EXPAND              ICON                    "res\\ARW06DN.ICO"
+
 IDI_ADD                 ICON                    "res\\Add.ico"
+
 IDI_DELETE              ICON                    "res\\Delete.ico"
+
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -80,51 +92,31 @@ IDD_KEY_DIALOG$(_ANSI) DIALOGEX 0, 0, 250, 193
 #else
 IDD_KEY_DIALOG DIALOGEX 0, 0, 250, 193
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
-    WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "OpenUnikey 0.0.2a"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    COMBOBOX        IDC_CODE_TABLE,66,14,112,64,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_INPUT_METHOD,66,32,83,52,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "CTRL + SHIFT",IDC_SW_KEY1,"Button",BS_AUTORADIOBUTTON | 
-                    WS_GROUP | WS_TABSTOP,66,49,63,10
-    CONTROL         "ALT + Z",IDC_SW_KEY2,"Button",BS_AUTORADIOBUTTON,66,60,
-                    42,10
-    CONTROL         "&Taskbar",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,188,
-                    11,55,17
-    CONTROL         "&KÕt thóc",IDC_EXIT,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    188,33,55,17
-    CONTROL         "Advanced <<",IDC_EXPAND,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,188,55,55,17
+    COMBOBOX        IDC_CODE_TABLE,66,14,112,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_INPUT_METHOD,66,32,83,52,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "CTRL + SHIFT",IDC_SW_KEY1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,66,49,63,10
+    CONTROL         "ALT + Z",IDC_SW_KEY2,"Button",BS_AUTORADIOBUTTON,66,60,42,10
+    CONTROL         "&Taskbar",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,188,11,55,17
+    CONTROL         "&KÕt thóc",IDC_EXIT,"Button",BS_OWNERDRAW | WS_TABSTOP,188,33,55,17
+    CONTROL         "Advanced <<",IDC_EXPAND,"Button",BS_OWNERDRAW | WS_TABSTOP,188,55,55,17
     CONTROL         "Cho phÐp gâ dÊu mò, mãc ë cuèi tõ",IDC_FREE_MARKING,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,94,130,10
-    CONTROL         "Ph¶i gâ dÊu ngay sau nguyªn ©m",IDC_TONE_CTRL,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,106,142,10
-    CONTROL         "Bá dÊu oµ, uý (thay v× ßa, óy)",IDC_MODERN_STYLE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,118,115,10
-    CONTROL         "Sö dông clipboard cho unicode",IDC_USE_CLIPBOARD,"Button",
-                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,13,130,130,
-                    10
-    CONTROL         "Vietnamese interface",IDC_VIET_GUI,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,157,93,82,10
-    CONTROL         "Enable macros",IDC_MACRO_CHECK,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,157,107,63,10
-    CONTROL         "Macro table...",IDC_MACRO_BTN,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,156,119,71,15
-    CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,148,113,10
-    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,138,148,105,10
-    CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,10,168,55,17
-    CONTROL         "Th«ng tin",IDC_ABOUT,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    69,168,55,17
-    CONTROL         "MÆc ®Þnh",IDC_RESET,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    128,168,55,17
+    CONTROL         "Ph¶i gâ dÊu ngay sau nguyªn ©m",IDC_TONE_CTRL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,106,142,10
+    CONTROL         "Bá dÊu oµ, uý (thay v× ßa, óy)",IDC_MODERN_STYLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,118,115,10
+    CONTROL         "Sö dông clipboard cho unicode",IDC_USE_CLIPBOARD,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,13,130,130,10
+    CONTROL         "Vietnamese interface",IDC_VIET_GUI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,93,82,10
+    CONTROL         "Enable macros",IDC_MACRO_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,107,63,10
+    CONTROL         "Macro table...",IDC_MACRO_BTN,"Button",BS_OWNERDRAW | WS_TABSTOP,156,119,71,15
+    CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,148,113,10
+    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,148,105,10
+    CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | WS_TABSTOP,10,168,55,17
+    CONTROL         "Th«ng tin",IDC_ABOUT,"Button",BS_OWNERDRAW | WS_TABSTOP,69,168,55,17
+    CONTROL         "MÆc ®Þnh",IDC_RESET,"Button",BS_OWNERDRAW | WS_TABSTOP,128,168,55,17
     GROUPBOX        "§iÒu khiÓn",IDC_CONTROL_GROUP,7,7,175,66
     LTEXT           "B¶ng m·:",IDC_CHARSET_PROMPT,14,17,52,8,SS_NOPREFIX
     LTEXT           "PhÝm chuyÓn:",IDC_SWITCHKEY_PROMPT,13,51,48,8
@@ -137,31 +129,24 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(_ANSI)
 #if defined(APSTUDIO_INVOKED)
-IDD_ABOUT$(_ANSI) DIALOGEX 0, 0, 244, 137
+IDD_ABOUT$(_ANSI) DIALOGEX 0, 0, 323, 148
 #else
-IDD_ABOUT DIALOGEX 0, 0, 244, 137
+IDD_ABOUT DIALOGEX 0, 0, 323, 148
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
-    WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About OpenUnikey 0.0.2a [Build 000005]"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,97,114,46,
-                    16
-    LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,76,29,54,8
-    GROUPBOX        "",IDC_STATIC,7,7,230,49
-    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,
-                    8
-    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",
-                    IDC_INFO,7,64,230,28,SS_NOPREFIX | SS_SUNKEN
-    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,
-                    39,41,158,8
+    PUSHBUTTON      "OK",IDOK,134,125,46,16,BS_FLAT
+    LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,76,29,96,8
+    GROUPBOX        "",IDC_STATIC,7,7,309,57
+    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,70,309,33,SS_NOPREFIX | SS_SUNKEN
+    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,39,41,158,17
     LTEXT           "Web site:",IDC_STATIC,39,29,31,8
-    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,100,67,8,NOT 
-                    WS_VISIBLE
-    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,81,100,80,9,
-                    NOT WS_VISIBLE
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,108,67,8,NOT WS_VISIBLE
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,81,108,172,9,NOT WS_VISIBLE
 END
 #endif
 
@@ -171,40 +156,26 @@ IDD_TOOLKIT$(_ANSI) DIALOGEX 0, 0, 319, 212
 #else
 IDD_TOOLKIT DIALOGEX 0, 0, 319, 212
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
-    WS_CAPTION
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "OpenUnikey Toolkit"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    COMBOBOX        IDC_IN_CHARSET,61,16,126,157,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_OUT_CHARSET,61,35,126,149,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Swap charset",IDC_SWAP_CHARSET,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,61,60,68,17
-    CONTROL         "Convert clipboard",IDC_CLIPBOARD,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,7,92,94,10
+    COMBOBOX        IDC_IN_CHARSET,61,16,126,157,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_OUT_CHARSET,61,35,126,149,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Swap charset",IDC_SWAP_CHARSET,"Button",BS_OWNERDRAW | WS_TABSTOP,61,60,68,17
+    CONTROL         "Convert clipboard",IDC_CLIPBOARD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,92,94,10
     EDITTEXT        IDC_IN_FILE,65,122,196,14,ES_AUTOHSCROLL
-    CONTROL         "",IDC_IN_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,277,
-                    124,26,14
+    CONTROL         "",IDC_IN_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,277,124,26,14
     EDITTEXT        IDC_OUT_FILE,66,143,196,14,ES_AUTOHSCROLL
-    CONTROL         "",IDC_OUT_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,277,
-                    143,26,14
-    CONTROL         "Convert",IDC_CONVERT,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    7,189,57,16
-    CONTROL         "Close",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,255,189,
-                    57,16
-    CONTROL         "To upper case",IDC_TO_UPPER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,204,19,102,11
-    CONTROL         "To lower case",IDC_TO_LOWER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,204,32,102,11
-    CONTROL         "Remove tone marks",IDC_REMOVE_TONE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,204,45,102,11
-    CONTROL         "Do not use rich text format",IDC_NO_RICH_TEXT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,204,58,101,11
-    CONTROL         "Use minimal font set",IDC_MINIMAL_FONTSET,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,204,70,102,11
+    CONTROL         "",IDC_OUT_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,277,143,26,14
+    CONTROL         "Convert",IDC_CONVERT,"Button",BS_OWNERDRAW | WS_TABSTOP,7,189,57,16
+    CONTROL         "Close",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,255,189,57,16
+    CONTROL         "To upper case",IDC_TO_UPPER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,19,102,11
+    CONTROL         "To lower case",IDC_TO_LOWER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,32,102,11
+    CONTROL         "Remove tone marks",IDC_REMOVE_TONE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,45,102,11
+    CONTROL         "Do not use rich text format",IDC_NO_RICH_TEXT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,58,101,11
+    CONTROL         "Use minimal font set",IDC_MINIMAL_FONTSET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,70,102,11
     GROUPBOX        "Character set",IDC_STATIC_CHARSET,7,7,183,78
     GROUPBOX        "File",IDC_STATIC_FILE,7,108,305,69
     LTEXT           "Source",IDC_STATIC_IN_CHARSET,13,19,35,8
@@ -212,8 +183,7 @@ BEGIN
     LTEXT           "Destination",IDC_STATIC_OUT_CHARSET,13,38,42,8
     LTEXT           "Output file",IDC_STATIC_OUT_FILE,13,148,46,8
     GROUPBOX        "Options",IDC_STATIC_OPTION,195,7,117,78
-    LTEXT           "Only plain text and Rich Text Format are supported",
-                    IDC_FILE_NOTE,65,161,211,12
+    LTEXT           "Only plain text and Rich Text Format are supported",IDC_FILE_NOTE,65,161,211,12
 END
 #endif
 
@@ -223,35 +193,24 @@ IDD_MACRO$(_ANSI) DIALOGEX 0, 0, 347, 215
 #else
 IDD_MACRO DIALOGEX 0, 0, 347, 215
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
-    WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Macro Table"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     EDITTEXT        IDC_KEY,7,24,54,14,ES_AUTOHSCROLL
     EDITTEXT        IDC_TEXT,65,24,214,14,ES_AUTOHSCROLL
-    LISTBOX         IDC_ITEMLIST,7,45,271,110,LBS_SORT | LBS_USETABSTOPS | 
-                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
-                    WS_TABSTOP
-    CONTROL         "Add",IDC_EDIT,"Button",BS_OWNERDRAW | WS_TABSTOP,286,
-                    117,50,16
-    CONTROL         "Delete",IDC_DELETE,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    286,139,50,16
-    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,286,25,50,
-                    16
-    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,286,
-                    48,50,16
-    LTEXT           "Note: Replacement texts are displayed here in VIQR format",
-                    IDC_NOTE,7,159,202,11
+    LISTBOX         IDC_ITEMLIST,7,45,271,110,LBS_SORT | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Add",IDC_EDIT,"Button",BS_OWNERDRAW | WS_TABSTOP,286,117,50,16
+    CONTROL         "Delete",IDC_DELETE,"Button",BS_OWNERDRAW | WS_TABSTOP,286,139,50,16
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,286,25,50,16
+    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,286,48,50,16
+    LTEXT           "Note: Replacement texts are displayed here in VIQR format",IDC_NOTE,7,159,202,11
     LTEXT           "Replace:",IDC_STATIC_REPLACE,7,10,30,8
     LTEXT           "With:",IDC_STATIC_WITH,65,10,18,8
-    CONTROL         "Allow macros even if Vietnamese is off",
-                    IDC_ALWAYS_MACRO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
-                    159,189,153,11
-    CONTROL         "Load File...",IDC_SELECT_FILE,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,7,187,64,17
-    CONTROL         "Select Default",IDC_SELECT_DEFAULT,"Button",
-                    BS_OWNERDRAW | WS_TABSTOP,77,187,64,17
+    CONTROL         "Allow macros even if Vietnamese is off",IDC_ALWAYS_MACRO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,159,189,153,11
+    CONTROL         "Load File...",IDC_SELECT_FILE,"Button",BS_OWNERDRAW | WS_TABSTOP,7,187,64,17
+    CONTROL         "Select Default",IDC_SELECT_DEFAULT,"Button",BS_OWNERDRAW | WS_TABSTOP,77,187,64,17
     LTEXT           "Static",IDC_FILE_NAME,53,173,199,9
     LTEXT           "Current File:",IDC_PATH_LABEL,9,173,40,9
 END
@@ -263,50 +222,31 @@ IDD_KEY_DIALOG$(_UNICODE) DIALOGEX 0, 0, 257, 188
 #else
 IDD_KEY_DIALOG DIALOGEX 0, 0, 257, 188
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
-    WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "OpenUnikey 0.0.2a"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
-    COMBOBOX        IDC_CODE_TABLE,69,15,119,64,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_INPUT_METHOD,69,33,95,52,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "CTRL + SHIFT",IDC_SW_KEY1,"Button",BS_AUTORADIOBUTTON | 
-                    WS_GROUP | WS_TABSTOP,69,50,63,10
-    CONTROL         "ALT + Z",IDC_SW_KEY2,"Button",BS_AUTORADIOBUTTON,69,61,
-                    42,10
-    CONTROL         "&Taskbar",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,200,
-                    11,49,17
-    CONTROL         "&KÕt thóc",IDC_EXIT,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    200,33,49,17
-    CONTROL         "Advanced",IDC_EXPAND,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    200,55,49,17
+    COMBOBOX        IDC_CODE_TABLE,69,15,119,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_INPUT_METHOD,69,33,95,52,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "CTRL + SHIFT",IDC_SW_KEY1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,69,50,63,10
+    CONTROL         "ALT + Z",IDC_SW_KEY2,"Button",BS_AUTORADIOBUTTON,69,61,42,10
+    CONTROL         "&Taskbar",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,200,11,49,17
+    CONTROL         "&KÕt thóc",IDC_EXIT,"Button",BS_OWNERDRAW | WS_TABSTOP,200,33,49,17
+    CONTROL         "Advanced",IDC_EXPAND,"Button",BS_OWNERDRAW | WS_TABSTOP,200,55,49,17
     CONTROL         "Cho phÐp gâ dÊu mò, mãc ë cuèi tõ",IDC_FREE_MARKING,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,94,138,10
-    CONTROL         "Ph¶i gâ dÊu ngay sau nguyªn ©m",IDC_TONE_CTRL,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,106,140,10
-    CONTROL         "Bá dÊu oµ, uý (thay v× ßa, óy)",IDC_MODERN_STYLE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,118,127,10
-    CONTROL         "Sö dông clipboard cho unicode",IDC_USE_CLIPBOARD,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,130,130,9
-    CONTROL         "Vietnamese interface",IDC_VIET_GUI,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,157,93,82,10
-    CONTROL         "Enable macros",IDC_MACRO_CHECK,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,157,107,63,10
-    CONTROL         "Macro table...",IDC_MACRO_BTN,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,156,119,71,15
-    CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,13,146,121,10
-    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,142,146,109,10
-    CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,10,163,60,17
-    CONTROL         "Th«ng tin",IDC_ABOUT,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    73,163,60,17
-    CONTROL         "MÆc ®Þnh",IDC_RESET,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    136,163,60,17
+    CONTROL         "Ph¶i gâ dÊu ngay sau nguyªn ©m",IDC_TONE_CTRL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,106,140,10
+    CONTROL         "Bá dÊu oµ, uý (thay v× ßa, óy)",IDC_MODERN_STYLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,118,127,10
+    CONTROL         "Sö dông clipboard cho unicode",IDC_USE_CLIPBOARD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,130,130,9
+    CONTROL         "Vietnamese interface",IDC_VIET_GUI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,93,82,10
+    CONTROL         "Enable macros",IDC_MACRO_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,157,107,63,10
+    CONTROL         "Macro table...",IDC_MACRO_BTN,"Button",BS_OWNERDRAW | WS_TABSTOP,156,119,71,15
+    CONTROL         "BËt héi tho¹i nµy khi khëi ®éng",IDC_SHOW_DLG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,146,121,10
+    CONTROL         "Auto-run OpenUnikey at boot time",IDC_AUTO_START,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,142,146,109,10
+    CONTROL         "&H­íng dÉn",IDC_OPEN_HELP,"Button",BS_OWNERDRAW | WS_TABSTOP,10,163,60,17
+    CONTROL         "Th«ng tin",IDC_ABOUT,"Button",BS_OWNERDRAW | WS_TABSTOP,73,163,60,17
+    CONTROL         "MÆc ®Þnh",IDC_RESET,"Button",BS_OWNERDRAW | WS_TABSTOP,136,163,60,17
     GROUPBOX        "§iÒu khiÓn",IDC_CONTROL_GROUP,7,7,187,66
     LTEXT           "B¶ng m·:",IDC_CHARSET_PROMPT,14,17,52,8,SS_NOPREFIX
     LTEXT           "PhÝm chuyÓn:",IDC_SWITCHKEY_PROMPT,13,51,49,8
@@ -323,40 +263,26 @@ IDD_TOOLKIT$(_UNICODE) DIALOGEX 0, 0, 305, 195
 #else
 IDD_TOOLKIT DIALOGEX 0, 0, 305, 195
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
-    WS_CAPTION
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "OpenUnikey Toolkit"
 FONT 8, "Arial", 0, 0, 0x1
 BEGIN
-    COMBOBOX        IDC_IN_CHARSET,55,17,117,150,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_OUT_CHARSET,55,33,117,149,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Swap charset",IDC_SWAP_CHARSET,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,55,57,68,16
-    CONTROL         "Convert clipboard",IDC_CLIPBOARD,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,7,87,94,9
+    COMBOBOX        IDC_IN_CHARSET,55,17,117,150,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_OUT_CHARSET,55,33,117,149,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Swap charset",IDC_SWAP_CHARSET,"Button",BS_OWNERDRAW | WS_TABSTOP,55,57,68,16
+    CONTROL         "Convert clipboard",IDC_CLIPBOARD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,87,94,9
     EDITTEXT        IDC_IN_FILE,57,112,194,14,ES_AUTOHSCROLL
-    CONTROL         "",IDC_IN_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,259,
-                    112,26,14
+    CONTROL         "",IDC_IN_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,259,112,26,14
     EDITTEXT        IDC_OUT_FILE,57,132,194,14,ES_AUTOHSCROLL
-    CONTROL         "",IDC_OUT_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,259,
-                    132,26,14
-    CONTROL         "Chuyen ma",IDC_CONVERT,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,7,172,68,16
-    CONTROL         "Close",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,245,172,
-                    53,16
-    CONTROL         "To upper case",IDC_TO_UPPER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,16,102,10
-    CONTROL         "To lower case",IDC_TO_LOWER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,28,100,10
-    CONTROL         "Remove tone marks",IDC_REMOVE_TONE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,190,40,98,10
-    CONTROL         "Do not use rich text format",IDC_NO_RICH_TEXT,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,190,52,101,10
-    CONTROL         "Use minimal font set",IDC_MINIMAL_FONTSET,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,190,64,102,10
+    CONTROL         "",IDC_OUT_BROWSE,"Button",BS_OWNERDRAW | WS_TABSTOP,259,132,26,14
+    CONTROL         "Chuyen ma",IDC_CONVERT,"Button",BS_OWNERDRAW | WS_TABSTOP,7,172,68,16
+    CONTROL         "Close",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,245,172,53,16
+    CONTROL         "To upper case",IDC_TO_UPPER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,16,102,10
+    CONTROL         "To lower case",IDC_TO_LOWER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,28,100,10
+    CONTROL         "Remove tone marks",IDC_REMOVE_TONE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,40,98,10
+    CONTROL         "Do not use rich text format",IDC_NO_RICH_TEXT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,52,101,10
+    CONTROL         "Use minimal font set",IDC_MINIMAL_FONTSET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,64,102,10
     GROUPBOX        "Character set",IDC_STATIC_CHARSET,7,7,171,72
     GROUPBOX        "File",IDC_STATIC_FILE,7,100,291,67
     LTEXT           "Source:",IDC_STATIC_IN_CHARSET,12,20,26,8
@@ -364,38 +290,30 @@ BEGIN
     LTEXT           "Destination:",IDC_STATIC_OUT_CHARSET,12,35,38,8
     LTEXT           "Output",IDC_STATIC_OUT_FILE,13,135,41,8
     GROUPBOX        "Options",IDC_STATIC_OPTION,181,7,117,72
-    LTEXT           "Only plain text and Rich Text Format are supported",
-                    IDC_FILE_NOTE,57,151,211,11
+    LTEXT           "Only plain text and Rich Text Format are supported",IDC_FILE_NOTE,57,151,211,11
 END
 #endif
 
 #if defined(APSTUDIO_INVOKED) || defined(_UNICODE)
 #if defined(APSTUDIO_INVOKED)
-IDD_ABOUT$(_UNICODE) DIALOGEX 0, 0, 238, 132
+IDD_ABOUT$(_UNICODE) DIALOGEX 0, 0, 353, 143
 #else
-IDD_ABOUT DIALOGEX 0, 0, 238, 132
+IDD_ABOUT DIALOGEX 0, 0, 353, 143
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
-    WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About OpenUnikey 0.0.2a [Build 000005 NT]"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
-    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,95,108,46,
-                    16
-    LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,83,27,52,8
-    GROUPBOX        "",IDC_STATIC,7,7,224,47
-    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,
-                    8
-    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",
-                    IDC_INFO,7,61,224,28,SS_NOPREFIX | SS_SUNKEN
-    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,
-                    39,38,158,8
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,151,120,46,16
+    LTEXT           "https://openunikey.github.io",IDC_WEB_LINK,83,27,87,8
+    GROUPBOX        "",IDC_STATIC,7,7,339,56
+    LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,18
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,77,339,28,SS_NOPREFIX | SS_SUNKEN
+    LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,39,38,158,17
     LTEXT           " Web site:",IDC_STATIC,39,27,33,8
-    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,93,73,8,NOT 
-                    WS_VISIBLE
-    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,82,93,73,8,
-                    NOT WS_VISIBLE
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,109,73,8,NOT WS_VISIBLE
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,82,109,187,8,NOT WS_VISIBLE
 END
 #endif
 
@@ -405,33 +323,22 @@ IDD_MACRO$(_UNICODE) DIALOGEX 0, 0, 327, 202
 #else
 IDD_MACRO DIALOGEX 0, 0, 327, 202
 #endif
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
-    WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Macro Definition"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
     EDITTEXT        IDC_KEY,7,19,51,14,ES_AUTOHSCROLL
     EDITTEXT        IDC_TEXT,62,19,205,14,ES_AUTOHSCROLL
-    LISTBOX         IDC_ITEMLIST,7,40,261,110,LBS_SORT | LBS_USETABSTOPS | 
-                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
-                    WS_TABSTOP
-    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,278,41,42,
-                    16
-    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,278,
-                    61,42,16
-    CONTROL         "Add",IDC_EDIT,"Button",BS_OWNERDRAW | WS_TABSTOP,278,
-                    114,42,16
-    CONTROL         "Delete",IDC_DELETE,"Button",BS_OWNERDRAW | WS_TABSTOP,
-                    278,134,42,16
-    CONTROL         "Load File...",IDC_SELECT_FILE,"Button",BS_OWNERDRAW | 
-                    WS_TABSTOP,7,177,64,16
-    CONTROL         "Select Default",IDC_SELECT_DEFAULT,"Button",
-                    BS_OWNERDRAW | WS_TABSTOP,77,177,64,16
-    CONTROL         "Allow macros even if Vietnamese is off",
-                    IDC_ALWAYS_MACRO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
-                    151,180,153,10
-    LTEXT           "Note: Replacement texts are displayed here in VIQR format",
-                    IDC_NOTE,7,152,202,11,NOT WS_VISIBLE
+    LISTBOX         IDC_ITEMLIST,7,40,261,110,LBS_SORT | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,278,41,42,16
+    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,278,61,42,16
+    CONTROL         "Add",IDC_EDIT,"Button",BS_OWNERDRAW | WS_TABSTOP,278,114,42,16
+    CONTROL         "Delete",IDC_DELETE,"Button",BS_OWNERDRAW | WS_TABSTOP,278,134,42,16
+    CONTROL         "Load File...",IDC_SELECT_FILE,"Button",BS_OWNERDRAW | WS_TABSTOP,7,177,64,16
+    CONTROL         "Select Default",IDC_SELECT_DEFAULT,"Button",BS_OWNERDRAW | WS_TABSTOP,77,177,64,16
+    CONTROL         "Allow macros even if Vietnamese is off",IDC_ALWAYS_MACRO,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,151,180,153,10
+    LTEXT           "Note: Replacement texts are displayed here in VIQR format",IDC_NOTE,7,152,202,11,NOT WS_VISIBLE
     LTEXT           "Replace:",IDC_STATIC_REPLACE,7,7,30,8
     LTEXT           "With:",IDC_STATIC_WITH,62,7,25,8
     LTEXT           "Static",IDC_FILE_NAME,56,164,199,8
@@ -446,14 +353,14 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     "IDD_ABOUT$(_ANSI)", DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 237
+        RIGHTMARGIN, 316
         TOPMARGIN, 7
-        BOTTOMMARGIN, 130
+        BOTTOMMARGIN, 141
     END
 
     "IDD_TOOLKIT$(_ANSI)", DIALOG
@@ -489,9 +396,9 @@ BEGIN
     "IDD_ABOUT$(_UNICODE)", DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 231
+        RIGHTMARGIN, 346
         TOPMARGIN, 7
-        BOTTOMMARGIN, 125
+        BOTTOMMARGIN, 136
     END
 
     "IDD_MACRO$(_UNICODE)", DIALOG
@@ -510,7 +417,7 @@ END
 // Menu
 //
 
-IDR_KEY_MENU MENU 
+IDR_KEY_MENU MENU
 BEGIN
     POPUP "Keyboard Menu"
     BEGIN
@@ -544,18 +451,47 @@ END
 
 IDC_HAND_CURSOR         CURSOR                  "res\\H_POINT.CUR"
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(_ANSI)
+#if defined(APSTUDIO_INVOKED)
+IDD_ABOUT$(_ANSI) AFX_DIALOG_LAYOUT
+#else
+IDD_ABOUT AFX_DIALOG_LAYOUT
+#endif
+BEGIN
+    0
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || defined(_UNICODE)
+#if defined(APSTUDIO_INVOKED)
+IDD_ABOUT$(_UNICODE) AFX_DIALOG_LAYOUT
+#else
+IDD_ABOUT AFX_DIALOG_LAYOUT
+#endif
+BEGIN
+    0
+END
+#endif
+
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_APP_TITLE           "OpenUnikey 0.0.2a"
     IDS_ABOUT               "&About OpenUnikey..."
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
