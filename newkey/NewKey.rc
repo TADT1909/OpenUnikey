@@ -129,24 +129,24 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(_ANSI)
 #if defined(APSTUDIO_INVOKED)
-IDD_ABOUT$(_ANSI) DIALOGEX 0, 0, 323, 148
+IDD_ABOUT$(_ANSI) DIALOGEX 0, 0, 261, 148
 #else
-IDD_ABOUT DIALOGEX 0, 0, 323, 148
+IDD_ABOUT DIALOGEX 0, 0, 261, 148
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About OpenUnikey 0.0.2a [Build 000005]"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    PUSHBUTTON      "OK",IDOK,134,125,46,16,BS_FLAT
+    PUSHBUTTON      "OK",IDOK,103,125,46,16,BS_FLAT
     LTEXT           "http://openunikey.github.io",IDC_WEB_LINK,76,29,96,8
-    GROUPBOX        "",IDC_STATIC,7,7,309,57
+    GROUPBOX        "",IDC_STATIC,7,7,247,57
     LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,8
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
-    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,70,309,33,SS_NOPREFIX | SS_SUNKEN
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,70,247,33,SS_NOPREFIX | SS_SUNKEN
     LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,39,41,158,17
     LTEXT           "Web site:",IDC_STATIC,39,29,31,8
-    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,108,67,8,NOT WS_VISIBLE
-    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,81,108,172,9,NOT WS_VISIBLE
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,108,47,8,NOT WS_VISIBLE
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,42,108,172,9,NOT WS_VISIBLE
 END
 #endif
 
@@ -296,24 +296,24 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(_UNICODE)
 #if defined(APSTUDIO_INVOKED)
-IDD_ABOUT$(_UNICODE) DIALOGEX 0, 0, 353, 143
+IDD_ABOUT$(_UNICODE) DIALOGEX 0, 0, 277, 143
 #else
-IDD_ABOUT DIALOGEX 0, 0, 353, 143
+IDD_ABOUT DIALOGEX 0, 0, 277, 143
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About OpenUnikey 0.0.2a [Build 000005 NT]"
 FONT 8, "Arial", 0, 0, 0x0
 BEGIN
-    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,151,120,46,16
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,107,120,46,16
     LTEXT           "https://openunikey.github.io",IDC_WEB_LINK,83,27,87,8
-    GROUPBOX        "",IDC_STATIC,7,7,339,56
+    GROUPBOX        "",IDC_STATIC,7,7,263,56
     LTEXT           "Author: OpenUnikey",IDC_AUTHOR,39,16,163,8
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,18
-    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,77,339,28,SS_NOPREFIX | SS_SUNKEN
+    LTEXT           "OpenUnikey is a free open-source software, you can redistribute and/or modify it under the terms of the GNU General Public License.",IDC_INFO,7,77,263,28,SS_NOPREFIX | SS_SUNKEN
     LTEXT           "Copyright (C) 1998 - 2005 Pham Kim Long\nCopyright (C) 2016 OpenUnikey",IDC_COPYRIGHT,39,38,158,17
     LTEXT           " Web site:",IDC_STATIC,39,27,33,8
-    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,109,73,8,NOT WS_VISIBLE
-    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,82,109,187,8,NOT WS_VISIBLE
+    LTEXT           "Support:",IDC_SUPPORT_PROVIDER,7,109,60,8,NOT WS_VISIBLE
+    LTEXT           "https://github.com/OpenUnikey/OpenUnikey/issues",IDC_SUPPORT_LINK,69,109,187,8,NOT WS_VISIBLE
 END
 #endif
 
@@ -358,7 +358,7 @@ BEGIN
     "IDD_ABOUT$(_ANSI)", DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 316
+        RIGHTMARGIN, 254
         TOPMARGIN, 7
         BOTTOMMARGIN, 141
     END
@@ -396,7 +396,7 @@ BEGIN
     "IDD_ABOUT$(_UNICODE)", DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 346
+        RIGHTMARGIN, 270
         TOPMARGIN, 7
         BOTTOMMARGIN, 136
     END
