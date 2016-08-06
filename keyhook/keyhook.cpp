@@ -63,6 +63,13 @@ struct ThreadData {
 */
 //void InitThread();
 
+int GetAllKeysState(BYTE *myKeyState) {
+	for (int c = 0; c < 256; c++) {
+		myKeyState[c] = GetKeyState(c) & 0x80;
+	}
+	return 1;
+}
+
 
 int CheckSwitchKey(WPARAM wParam, LPARAM lParam);
 int CheckShortcuts(WPARAM wParam, LPARAM lParam);
@@ -233,7 +240,8 @@ LRESULT CALLBACK MyKeyHook(int code, WPARAM wParam, LPARAM lParam)
 	if (_tcscmp(className, _T("ConsoleWindowClass")) == 0)
 		return CallNextHookEx(pShMem->keyHook,code,wParam,lParam);
 	
-	GetKeyboardState(KeyState);
+	GetAllKeysState(KeyState);
+	//GetKeyboardState(KeyState);
 	HKL curLayout = GetKeyboardLayout(0);
 
 	if (curLayout != OriginalLayout && curLayout != ViKeyboardLayout)
